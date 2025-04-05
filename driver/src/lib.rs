@@ -4,6 +4,7 @@
 use core::mem::{size_of, MaybeUninit};
 use wdk::println;
 
+
 // Import allocator and panic handler.
 use wdk_alloc::WdkAllocator;
 #[global_allocator]
@@ -36,8 +37,8 @@ use wrappers::spin_lock::SpinLock;
 mod helpers;
 use helpers::init_unicode_string;
 
-// Define our IOCTL code.
-const IOCTL_GET_COUNTER: u32 = 0x800; // Example IOCTL code
+use shared::IOCTL_GET_COUNTER;
+
 
 //
 // Device Extension Structure

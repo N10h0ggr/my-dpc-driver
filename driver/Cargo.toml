@@ -27,6 +27,11 @@ wdk-alloc = { path = "../../ext-crates/windows-drivers-rs-main/crates/wdk-alloc"
 wdk-panic = { path = "../../ext-crates/windows-drivers-rs-main/crates/wdk-panic", version = "0.3.0" }
 wdk-sys = { path = "../../ext-crates/windows-drivers-rs-main/crates/wdk-sys",  version = "0.3.0" }
 
+[dependencies.shared]
+path = "../shared"
+default-features = false
+features = ["wdk-panic"]
+
 [features]
 default = []
 nightly = ["wdk/nightly", "wdk-sys/nightly"]

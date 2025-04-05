@@ -20,7 +20,7 @@ A Windows kernel driver written in Rust using the Windows Rust WDK. This project
 ## Key Concepts
 
 - **IRQL (Interrupt Request Level):**  
-  The driver uses an RAII pattern (as seen in [`driver/src/wrappers/irql_guard.rs`](driver/src/wrappers/irql_guard.rs)) to safely raise and lower the IRQL, ensuring critical sections execute without interruption.
+  The driver uses an RAII pattern to safely raise and lower the IRQL, ensuring critical sections execute without interruption.
 
 - **Deferred Procedure Calls (DPCs):**  
   DPCs enable the driver to schedule non-urgent tasks to be executed at a lower IRQL, thereby keeping high-priority operations responsive.
@@ -81,3 +81,6 @@ This project serves as an educational tool for Windows kernel driver development
 - Bridge Rust with essential Windows inline functions via C wrappers.
 
 The accompanying user-mode app in the **app/** folder can be used to send IOCTL commands and interact with the driver for testing purposes.
+
+![Example](dpc-driver.png)
+

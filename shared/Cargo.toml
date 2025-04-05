@@ -3,4 +3,10 @@ name = "shared"
 version = "0.1.0"
 edition = "2021"
 
+[features]
+default = ["std"]
+std = []
+wdk-panic = ["dep:wdk-panic"]
+
 [dependencies]
+wdk-panic = { path = "../../ext-crates/windows-drivers-rs-main/crates/wdk-panic", version = "0.3.0", optional = true }

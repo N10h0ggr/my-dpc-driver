@@ -1,3 +1,9 @@
+#![cfg_attr(not(feature = "std"), no_std)]
+
+#[cfg(all(not(feature = "std"), feature = "wdk-panic"))]
+extern crate wdk_panic;
+
+
 // Define constants for buffered I/O.
 const METHOD_BUFFERED: u32 = 0;
 const FILE_ANY_ACCESS: u32 = 0;
