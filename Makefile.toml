@@ -1,0 +1,22 @@
+extend = "target/rust-driver-makefile.toml"
+
+[config]
+load_script = '''
+#!@rust
+//! ```cargo
+//! [dependencies]
+//! wdk-build = "0.3.0"
+//! ```
+#![allow(unused_doc_comments)]
+
+wdk_build::cargo_make::load_rust_driver_makefile()?
+'''
+
+[tasks.workspace-build]
+description = "Builds the entire workspace including the driver, userland app, and shared library"
+command = "cargo"
+args = ["build", "--workspace"]
+
+[tasks.default]
+description = "Build all projects in the workspace (driver, app, and shared)"
+dependencies = ["workspace-build"]

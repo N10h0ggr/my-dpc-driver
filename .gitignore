@@ -1,0 +1,23 @@
+# Rust
+/target
+**/*.rs.bk
+
+# WDK-generated files (optional depending on your build setup)
+*.obj
+*.lib
+*.exp
+*.pdb
+*.log
+
+# VSCode
+.vscode/
+
+# Backup files
+*~
+
+# Cargo
+Cargo.lock
+
+# Build tools
+.DS_Store
+Thumbs.db
